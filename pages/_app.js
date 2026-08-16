@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
     "Hello! I'm Utsav D, a passionate Deep Learning Engineer, Data Scientist, and AI Developer. Welcome to my portfolio";
   const avatar =
     "https://avatars.githubusercontent.com/u/185116221?v=4";
-  const url = "https://github.com/Utsav-CODE-BOT/Personal-Portfolio";
+  const url = "https://personal-portfolio-yzzz.vercel.app/#about";
 
   return (
     <>

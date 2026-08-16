@@ -1,6 +1,8 @@
 # 3D Portfolio - Utsav D
 
-A 3D-themed personal portfolio website built using Next.js, Tailwind CSS, Three.js, React Three Fiber, and Framer Motion. 
+A 3D-themed personal portfolio website built using Next.js, Tailwind CSS, Three.js, React Three Fiber, and Framer Motion.
+
+🔗 **Live Demo:** [Portfolio | Utsav D](https://personal-portfolio-yzzz.vercel.app/#about) 
 
 ---
 
