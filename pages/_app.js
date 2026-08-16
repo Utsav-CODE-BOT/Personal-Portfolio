@@ -23,12 +23,12 @@ export default function App({ Component, pageProps }) {
     }
   }, [loading]);
 
-  const title = "Portfolio | Shivam Sharma";
+  const title = "Portfolio | Utsav D";
   const description =
-    "Hello! I'm Shivam Sharma, a passionate web developer and problem solver. Welcome to my portfolio";
+    "Hello! I'm Utsav D, a passionate Deep Learning Engineer, Data Scientist, and AI Developer. Welcome to my portfolio";
   const avatar =
-    "https://res.cloudinary.com/dyle3hnpw/image/upload/v1696091629/portfolio/WhatsApp_Image_2023-09-30_at_10.02.55_PM_jk44v9.jpg";
-  const url = "https://shivam-sharma-myportfolio.vercel.app/";
+    "https://avatars.githubusercontent.com/u/185116221?v=4";
+  const url = "https://github.com/Utsav-CODE-BOT/Personal-Portfolio";
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }) {
 
         <meta property="twitter:image" content={avatar} />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@Shivam_1_Sharma" />
+        <meta name="twitter:creator" content="Utsav D" />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
 

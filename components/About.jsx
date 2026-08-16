@@ -29,22 +29,13 @@ function About() {
       >
         <div className="flex flex-col gap-3">
           <p>
-            Hi, I&apos;m Shivam—a Software Engineer who enjoys turning complex
-            problems into simple, reliable products.
+            Hi, I&apos;m Utsav D—a passionate Data Scientist and Deep Learning Engineer with a strong foundation in machine learning, artificial intelligence, and advanced modeling techniques.
           </p>
           <p>
-            I&apos;m currently building full-stack and cloud-native applications
-            at Nike, where I work with React, TypeScript, AWS, and modern web
-            technologies. I enjoy owning the entire development journey, from
-            understanding the problem and designing the right solution to
-            building, testing, and shipping features that make a real impact.
+            I&apos;m currently a 3rd Year Undergraduate student in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Bengaluru. I enjoy developing and deploying sophisticated AI solutions, optimizing complex systems, and implementing state-of-the-art models in object detection, time series analysis, and natural language processing domains.
           </p>
           <p>
-            What motivates me most is solving challenging engineering problems.
-            Whether it&apos;s architecting serverless APIs, building scalable
-            frontend applications, or designing microfrontend platforms, I focus
-            on creating solutions that are maintainable, performant, and easy
-            for other developers to build upon.
+            My toolset includes Python, TensorFlow, PyTorch, and LangChain. I focus on creating systems that are highly performant, scalable, and secure, and I have hands-on experience using Docker, Kubernetes, and AWS for efficient containerized deployment.
           </p>
           <p>
             I&apos;m someone who enjoys asking &quot;why&quot; before jumping
@@ -53,8 +44,8 @@ function About() {
             technologies that help me build better software.
           </p>
           <p>
-            Outside of work, you&apos;ll usually find me building side projects
-            around AI, collaborative tools, and interactive web experiences. I
+            Outside of academic work, you&apos;ll usually find me building side projects
+            around AI agents, voice bots, and automated systems. I
             enjoy experimenting with new ideas, exploring modern technologies,
             and creating products that combine thoughtful engineering with great
             user experiences.
@@ -68,13 +59,13 @@ function About() {
         </div>
         <div className="w-fit break-words">
           <Link
-            href="mailto:shivamsharma77607@gmail.com"
+            href="mailto:ud12714@gmail.com"
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary w-full transition-all duration-100 ease-in flex md:items-center gap-2 md:flex-row flex-wrap word-break hover:-translate-y-2"
           >
             <EmailIcon className="w-[30px] h-[30px]" />
-            shivamsharma77607@gmail.com
+            ud12714@gmail.com
           </Link>
         </div>
         <div className="flex gap-5 items-center">
@@ -90,7 +81,7 @@ function About() {
           ))}
         </div>
         <Link
-          href="document/Shivam_Sharma_Resume.pdf"
+          href="document/Utsav_D_Resume.pdf"
           target="_blank"
           rel="noreferrer"
           className="w-fit"

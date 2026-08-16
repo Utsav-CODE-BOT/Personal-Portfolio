@@ -1,85 +1,55 @@
-# 3D Portfolio
+# 3D Portfolio - Utsav D
 
-![Portfolio Screenshot](/public/assets/readme_assets/screenshot.png)
+A 3D-themed personal portfolio website built using Next.js, Tailwind CSS, Three.js, React Three Fiber, and Framer Motion. 
 
-3D Portfolio is my personal portfolio website created using Next.js, Tailwind CSS, Three.js, React Three Fiber, and a collection of other technologies. This website showcases my skills, experiences, projects, and allows users to contact me. It also offers a dark and light theme to enhance the user experience.
+---
 
-## Table of Contents
+## 🚀 Features
 
-1.  [Demo](#demo)
-2.  [Features](#features)
-3.  [Technologies Used](#technologies-used)
-4.  [Packages Used](#packages-used)
-5.  [Getting started](#getting-started)
-6.  [Project Structure](#project-structure)
-7.  [Author](#author)
+- **About Me**: A professional biography summarizing candidate background in AI & DS at Amrita Vishwa Vidyapeetham.
+- **Experience & Milestones**: Interactive timeline highlighting academic milestones and projects.
+- **Skills Matrix**: Categorized tech stacks including Python, Deep Learning libraries, database management, and deployment tools.
+- **Project Showcase**: Rich project cards displaying Utsav's top 5 AI & Agentic repositories.
+- **Contact Form**: Responsive contact form integrated with EmailJS.
+- **3D Interactive Graphics**: Smoothly rendering Three.js canvases including an interactive earth, floating stars, and desktop monitor models.
+- **Responsive Theme Toggle**: Support for light and dark themes.
 
-## Demo
+---
 
-You can see a live demo of the portfolio website at [https://shivam-sharma-myportfolio.vercel.app/](https://shivam-sharma-myportfolio.vercel.app/).
+## 🛠️ Tech Stack & Dependencies
 
-## Features
+- **Frameworks:** Next.js (Pages Router), React.js, Tailwind CSS
+- **3D Rendering:** Three.js, React Three Fiber, Drei, Gltfjsx
+- **Animations:** Framer Motion, React Parallax Tilt, React Type Animation
+- **Contact Flow:** EmailJS
+- **Analytics:** Vercel Analytics
 
-- **About Me**: A brief introduction about myself.
-- **Experience**: Highlighted my work experience.
-- **Skills**: Listed my skills and expertise.
-- **Projects**: Showcased my projects.
-- **Contact**: Provided a contact form for users to get in touch with me.
-- **Responsive Design**: The website is fully responsive to provide an optimal experience on all devices.
-- **Dark and Light Themes**: Users can switch between dark and light themes to suit their preferences.
+---
 
-## Technologies Used
+## 📦 Getting Started
 
-- [Next.js](https://nextjs.org)
-- [React](https://reactjs.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Three.js](https://threejs.org)
-- [React Three Fiber](https://github.com/pmndrs/react-three-fiber)
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/Utsav-CODE-BOT/Personal-Portfolio.git
+   ```
 
-## Packages Used
+2. **Install project dependencies:**
+   ```bash
+   npm install
+   ```
 
-- [react-parallax-tilt](https://www.npmjs.com/package/react-parallax-tilt)
-- [react-type-animation](https://www.npmjs.com/package/react-type-animation)
-- [react-vertical-timeline-component](https://www.npmjs.com/package/react-vertical-timeline-component)
+3. **Run the local development server:**
+   ```bash
+   npm run dev
+   ```
 
-## Getting started
+4. Open [http://localhost:3000](http://localhost:3000) in your web browser.
 
-1. Clone this repository to your local machine:
+---
 
-```bash
-git clone https://github.com/Shivam-Sharma-1/3D-Portfolio
-```
+## 🧑‍💻 Author
 
-2. Change to the project directory:
-
-```bash
-cd 3d-portfolio
-```
-
-3. Install the project dependencies:
-
-```bash
-npm install
-```
-
-4. To run the development server:
-
-```bash
-npm run dev
-```
-
-Open your web browser and visit http://localhost:3000 to see the website in action during development.
-
-## Project Structure
-
-The project structure is organized as follows:
-
-- `components`: React components used to build different sections of the portfolio.
-- `styles`: Styles and theme configurations, including the dark and light themes.
-- `public`: Static assets, such as images and fonts.
-- `pages`: Individual pages of the website.
-- `utils`: Utility functions or helper scripts.
-
-## Author
-
-- [@Shivam-Sharma-1](https://github.com/Shivam-Sharma-1)
+- **Utsav D**
+  - **Email:** ud12714@gmail.com
+  - **GitHub:** [Utsav-CODE-BOT](https://github.com/Utsav-CODE-BOT)
+  - **LinkedIn:** [Utsav D](https://www.linkedin.com/in/utsav26/)
