@@ -81,7 +81,7 @@ function About() {
           ))}
         </div>
         <Link
-          href="document/Utsav_D_Resume.pdf"
+          href="/document/Utsav_D_Resume.pdf"
           target="_blank"
           rel="noreferrer"
           className="w-fit"

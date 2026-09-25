@@ -185,7 +185,7 @@ const experiences = [
     company_name: "Amrita Vishwa Vidyapeetham, Bengaluru",
     icon: "/assets/company/gdsc-logo.svg",
     iconBg: "#E6DEDD",
-    date: "2023 - Present",
+    date: "Aug 2024 – May 2028",
     points: [
       "Deepening academic foundation in Deep Learning, NLP, Time Series Analysis, and Multi-Agent Orchestration.",
       "Developing and testing robust AI architectures, integrating advanced models like PyTorch, TensorFlow, and LangChain.",
