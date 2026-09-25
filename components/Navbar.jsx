@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +13,54 @@ function Navbar() {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      // When near the top (Hero section), no link is active
+      const aboutElement = document.getElementById("about");
+      if (aboutElement) {
+        const aboutTop = aboutElement.getBoundingClientRect().top + scrollY;
+        if (scrollY < aboutTop - 300) {
+          setActive("");
+          return;
+        }
+      } else if (scrollY < 200) {
+        setActive("");
+        return;
+      }
+
+      // When near the bottom of the page, activate Contact
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      if (scrollY + windowHeight >= docHeight - 100) {
+        setActive("Contact");
+        return;
+      }
+
+      // Check sections from bottom to top
+      const triggerPoint = scrollY + windowHeight * 0.35;
+      for (let i = navLinks.length - 1; i >= 0; i--) {
+        const nav = navLinks[i];
+        const element = document.getElementById(nav.id);
+        if (element) {
+          const elementTop = element.getBoundingClientRect().top + scrollY;
+          if (triggerPoint >= elementTop) {
+            setActive(nav.title);
+            return;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <nav
@@ -20,7 +68,13 @@ function Navbar() {
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <div className="flex items-center gap-6">
-            <Link href="/">
+            <Link
+              href="/"
+              onClick={() => {
+                setActive("");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               <p className="dark:text-ctnPrimaryDark text-ctnPrimaryLight text-[18px] font-bold cursor-pointer flex ">
                 Utsav D &nbsp;
                 <span className="lg:block hidden"> | AI & Data Science Developer</span>
