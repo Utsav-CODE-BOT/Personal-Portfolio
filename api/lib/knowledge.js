@@ -115,6 +115,11 @@ AI & Data Science undergraduate with hands-on experience in Machine Learning, De
   }
 ];
 
+// Return full merged knowledge document context
+export function getFullKnowledgeContext() {
+  return RAW_KNOWLEDGE.map(doc => doc.content).join('\n\n---\n\n');
+}
+
 // Build cached chunks
 let indexedChunks = null;
 
