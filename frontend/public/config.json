@@ -1,47 +1,49 @@
 {
   "personal": {
-    "name": "Alon Trugman",
-    "email": "alon.xt@gmail.com",
-    "profileImageAlt": "Alon Trugman"
+    "name": "Utsav D",
+    "email": "ud12714@gmail.com",
+    "profileImageAlt": "Utsav D",
+    "brand": "Utsav.dev"
   },
   "social": {
     "github": {
-      "url": "https://github.com/alonxt"
+      "url": "https://github.com/Utsav-CODE-BOT",
+      "username": "Utsav-CODE-BOT"
     },
     "linkedin": {
-      "url": "https://linkedin.com/in/alon-trugman"
+      "url": "https://www.linkedin.com/in/utsav26/"
     },
     "email": {
-      "url": "mailto:alon.xt@gmail.com"
+      "url": "mailto:ud12714@gmail.com"
     }
   },
   "content": {
     "intro": {
       "cards": [
         {
-          "title": "Years of Growth",
-          "description": "Documenting my life's journey",
+          "title": "Agentic AI & Systems",
+          "description": "Architecting autonomous LLM agents, reinforcement learning models, and security sandboxes",
           "icon": "Brain"
         },
         {
-          "title": "Knowledge Collection",
-          "description": "My insights from books, podcasts, blogs and social media posts",
+          "title": "Deep Learning & CV",
+          "description": "Developing neural architectures, 6-DOF robotic kinematics, and real-time computer vision apps",
           "icon": "BookOpen"
         },
         {
-          "title": "AI Conversations",
-          "description": "Based on my real experince and content",
+          "title": "Interactive AI Assistant",
+          "description": "Chat with my AI assistant below to explore my projects, background, and technical journey",
           "icon": "MessageSquareText"
         }
       ],
       "paragraphs": [
-        "For years, I've been documenting my journey. This space is where I share the intersection of my professional expertise and personal growth.",
-        "Using my authentic writings and reflections, you can explore my documented insights and experiences. While AI isn't perfect, I hope it will share my story as genuinely as possible."
+        "I'm an AI & Data Science undergraduate at Amrita Vishwa Vidyapeetham with deep passion for Machine Learning, Robotics, and Autonomous Agent Systems.",
+        "From simulating 6-DOF robotic manipulators and RL process schedulers to building ethical AI healthcare chatbots and multi-agent workflows, I love turning complex intelligent architectures into production-ready software. Feel free to ask my AI assistant anything about my work!"
       ]
     }
   },
   "chat": {
-    "inputPlaceholder": "Ask me anything about Alon...",
-    "initialMessage": "Hey there! 👋 I'm Alon's AI assistant, I have access to his writings, and life insights. Feel free to ask and explore about his professional path or personal growth!"
+    "inputPlaceholder": "Ask me anything about Utsav...",
+    "initialMessage": "Hey there! \ud83d\udc4b I'm Utsav's AI assistant, trained on his projects, resume, and technical background. Ask me anything about his AI/ML experience, robotics work, or open-source projects!"
   }
-} 
+}
