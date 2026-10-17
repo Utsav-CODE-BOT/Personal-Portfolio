@@ -65,7 +65,10 @@ export async function* streamCompletion(userMessage, history = [], env = {}) {
 
   const rawBaseUrl = getEnv('LLM_BASE_URL') || 'https://generativelanguage.googleapis.com/v1beta/openai/';
   const baseUrl = rawBaseUrl.replace(/\/+$/, '');
-  const model = getEnv('LLM_MODEL') || 'gemini-1.5-flash';
+  let model = getEnv('LLM_MODEL') || 'gemini-3.8-flash';
+  if (model.includes('1.5-flash') || model.includes('2.5-flash')) {
+    model = 'gemini-3.8-flash';
+  }
 
   const isInvalidKey = !apiKey ||
     apiKey.startsWith('(') ||
