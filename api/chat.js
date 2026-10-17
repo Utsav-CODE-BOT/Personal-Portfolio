@@ -58,7 +58,7 @@ export default async function handler(req, res) {
   });
 
   try {
-    const stream = streamCompletion(userMessage, history);
+    const stream = streamCompletion(userMessage, history, process.env);
     for await (const chunk of stream) {
       res.write(chunk);
       if (typeof res.flush === 'function') {
@@ -71,6 +71,7 @@ export default async function handler(req, res) {
     if (!res.headersSent) {
       res.status(500).json({ detail: 'An error occurred while processing your request' });
     } else {
+      res.write(`0:${JSON.stringify("I apologize, but I encountered an error while processing your request. Please try again.")}\n`);
       res.end();
     }
   }

@@ -52,12 +52,13 @@ export async function onRequestPost(context) {
   const readable = new ReadableStream({
     async start(controller) {
       try {
-        const stream = streamCompletion(userMessage, history);
+        const stream = streamCompletion(userMessage, history, context.env);
         for await (const chunk of stream) {
           controller.enqueue(encoder.encode(chunk));
         }
       } catch (err) {
         console.error('Streaming error in Cloudflare Pages Function:', err);
+        controller.enqueue(encoder.encode(`0:${JSON.stringify("I apologize, but I encountered an error while processing your request. Please try again.")}\n`));
       } finally {
         controller.close();
       }
