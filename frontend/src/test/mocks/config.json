@@ -1,49 +1,49 @@
 {
   "personal": {
-    "name": "Utsav D",
-    "email": "ud12714@gmail.com",
-    "profileImageAlt": "Utsav D",
-    "brand": "Utsav.dev"
+    "name": "Test User",
+    "email": "test@example.com",
+    "profileImageAlt": "Test User",
+    "brand": "TestUser.dev"
   },
   "social": {
     "github": {
-      "url": "https://github.com/Utsav-CODE-BOT",
-      "username": "Utsav-CODE-BOT"
+      "url": "https://github.com/testuser",
+      "username": "testuser"
     },
     "linkedin": {
-      "url": "https://www.linkedin.com/in/utsav26/"
+      "url": "https://linkedin.com/in/testuser"
     },
     "email": {
-      "url": "mailto:ud12714@gmail.com"
+      "url": "mailto:test@example.com"
     }
   },
   "content": {
     "intro": {
       "cards": [
         {
-          "title": "Agentic AI & Systems",
-          "description": "Architecting autonomous LLM agents, reinforcement learning models, and security sandboxes",
+          "title": "Years of Growth",
+          "description": "Documenting my journey from 2.5 years of therapy",
           "icon": "Brain"
         },
         {
-          "title": "Deep Learning & CV",
-          "description": "Developing neural architectures, 6-DOF robotic kinematics, and real-time computer vision apps",
+          "title": "Knowledge Collection",
+          "description": "My insights from books, podcasts, blogs and social media posts",
           "icon": "BookOpen"
         },
         {
-          "title": "Interactive AI Assistant",
-          "description": "Chat with my AI assistant below to explore my projects, background, and technical journey",
+          "title": "AI Conversations",
+          "description": "Based on my real experince and content",
           "icon": "MessageSquareText"
         }
       ],
       "paragraphs": [
-        "I'm an AI & Data Science undergraduate at Amrita Vishwa Vidyapeetham with deep passion for Machine Learning, Robotics, and Autonomous Agent Systems.",
-        "From simulating 6-DOF robotic manipulators and RL process schedulers to building ethical AI healthcare chatbots and multi-agent workflows, I love turning complex intelligent architectures into production-ready software. Feel free to ask my AI assistant anything about my work!"
+        "Test paragraph",
+        "Test paragraph 2"
       ]
     }
   },
   "chat": {
-    "inputPlaceholder": "Ask me anything about Utsav...",
-    "initialMessage": "Hey there! \ud83d\udc4b I'm Utsav's AI assistant, trained on his projects, resume, and technical background. Ask me anything about his AI/ML experience, robotics work, or open-source projects!"
+    "inputPlaceholder": "Ask me anything about Test User...",
+    "initialMessage": "Hello!"
   }
 }

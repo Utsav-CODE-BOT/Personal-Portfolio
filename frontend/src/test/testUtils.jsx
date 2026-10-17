@@ -1,7 +1,6 @@
 import { vi } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import mockConfig from './mocks/config.json';
 
 // Create a mock ConfigContext and Provider without importing the actual ConfigProvider
@@ -139,7 +138,7 @@ export const createMockStreamingResponse = (chunks) => {
   };
   
   // Setup the reader to return chunks and then done
-  chunks.forEach((chunk, index) => {
+  chunks.forEach((chunk) => {
     mockReader.read.mockResolvedValueOnce({
       value: new TextEncoder().encode(chunk),
       done: false

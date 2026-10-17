@@ -1,7 +1,6 @@
 import React from 'react';
 import { vi } from 'vitest';
 import { createLocalStorageMock } from './testUtils.jsx';
-import mockConfig from './mocks/config.json';
 
 /**
  * Common mock for framer-motion

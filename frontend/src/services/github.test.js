@@ -8,11 +8,17 @@ describe('GitHub Service', () => {
   beforeEach(() => {
     // Mock fetch before each test
     global.fetch = vi.fn();
+    if (typeof window !== 'undefined' && window.sessionStorage) {
+      window.sessionStorage.clear();
+    }
   });
   
   afterEach(() => {
     // Restore fetch after each test
     global.fetch = originalFetch;
+    if (typeof window !== 'undefined' && window.sessionStorage) {
+      window.sessionStorage.clear();
+    }
     vi.clearAllMocks();
   });
   

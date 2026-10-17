@@ -12,7 +12,7 @@ export const ProjectsSection = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-[300px] text-gray-400 gap-3">
         <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
-        <span className="text-sm">Loading projects from GitHub...</span>
+        <span className="text-sm">Loading...</span>
       </div>
     )
   }
@@ -20,7 +20,7 @@ export const ProjectsSection = () => {
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[300px] text-gray-400 gap-2">
-        <p className="text-red-400 font-medium">Unable to load live projects at this moment.</p>
+        <p className="text-red-400 font-medium">Error loading projects</p>
         <a
           href={social?.github?.url || `https://github.com/${username}`}
           target="_blank"

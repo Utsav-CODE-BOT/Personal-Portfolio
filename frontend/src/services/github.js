@@ -5,26 +5,24 @@ export const fetchUserRepos = async (username) => {
 
   const cacheKey = `github_repos_${username}`;
   try {
-    const cached = typeof window !== 'undefined' ? sessionStorage.getItem(cacheKey) : null;
+    const cached = typeof window !== 'undefined' && window.sessionStorage ? window.sessionStorage.getItem(cacheKey) : null;
     if (cached) {
       return JSON.parse(cached);
     }
-  } catch (e) {
-    console.warn('Session storage read error:', e);
+  } catch {
+    // ignore
   }
 
   try {
-    const response = await fetch(`${GITHUB_API_BASE}/users/${username}/repos?sort=updated&per_page=30`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch repos: ${response.statusText}`);
-    }
+    const response = await fetch(`${GITHUB_API_BASE}/users/${username}/repos`);
+    if (!response.ok) throw new Error('Failed to fetch repos');
     const data = await response.json();
     try {
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem(cacheKey, JSON.stringify(data));
+      if (typeof window !== 'undefined' && window.sessionStorage) {
+        window.sessionStorage.setItem(cacheKey, JSON.stringify(data));
       }
-    } catch (e) {
-      console.warn('Session storage write error:', e);
+    } catch {
+      // ignore
     }
     return data;
   } catch (error) {

@@ -11,7 +11,7 @@ vi.mock('../../../hooks/useStreamingChat', () => ({
   useStreamingChat: vi.fn(() => ({
     isLoading: false,
     error: null,
-    sendMessage: vi.fn(async (chatRequest) => {
+    sendMessage: vi.fn(async (_chatRequest) => {
       // Mock successful message sending
       return { success: true };
     }),
@@ -89,7 +89,7 @@ describe('ChatBox', () => {
     mockUseStreamingChat = {
       isLoading: false,
       error: null,
-      sendMessage: vi.fn(async (chatRequest) => ({ success: true })),
+      sendMessage: vi.fn(async (_chatRequest) => ({ success: true })),
       startNewChat: vi.fn(),
       stopAnswering: vi.fn(),
       messages: [{ role: 'assistant', content: 'Hello! How can I help you today?' }],

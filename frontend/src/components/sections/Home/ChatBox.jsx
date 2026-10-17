@@ -97,7 +97,7 @@ export const ChatBox = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                {firstName}'s AI
+                {firstName}&apos;s AI
               </motion.h2>
               <motion.div
                 animate={{

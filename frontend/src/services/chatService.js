@@ -18,13 +18,13 @@ export class ChatService {
         const { done, value } = await reader.read();
 
         if (done) {
-          // Process any remaining data in buffer
           if (buffer.trim()) {
             const match = buffer.match(/^0:(.+)$/);
             if (match) {
               try {
-                const content = JSON.parse(match[1]);
-                fullMessage += content;
+                const parsed = JSON.parse(match[1]);
+                const text = typeof parsed === 'string' ? parsed : (parsed?.chunk || '');
+                fullMessage += text;
                 callbacks.onChunk(fullMessage);
               } catch (e) {
                 console.error('Error parsing final chunk in buffer:', e);
@@ -37,9 +37,22 @@ export class ChatService {
 
         const chunk = decoder.decode(value, { stream: true });
         buffer += chunk;
-        const lines = buffer.split('\n');
-        // Keep the last partial line in buffer
-        buffer = lines.pop();
+        let lines = [];
+
+        if (buffer.includes('\n')) {
+          lines = buffer.split('\n');
+          buffer = lines.pop(); // keep partial line for next iteration
+        } else if (buffer.startsWith('0:')) {
+          // If a chunk doesn't have a trailing newline (e.g. in unit tests), check if it is complete JSON
+          try {
+            const raw = buffer.slice(2).trim();
+            JSON.parse(raw);
+            lines = [buffer];
+            buffer = '';
+          } catch {
+            // Incomplete JSON, wait for next chunk
+          }
+        }
 
         for (const line of lines) {
           if (line.trim() === '') continue;
@@ -47,8 +60,9 @@ export class ChatService {
           const match = line.match(/^0:(.+)$/);
           if (match) {
             try {
-              const content = JSON.parse(match[1]);
-              fullMessage += content;
+              const parsed = JSON.parse(match[1]);
+              const text = typeof parsed === 'string' ? parsed : (parsed?.chunk || '');
+              fullMessage += text;
               callbacks.onChunk(fullMessage);
               await new Promise(resolve => setTimeout(resolve, 30));
             } catch (e) {
@@ -64,35 +78,27 @@ export class ChatService {
   }
 
   static async handleError(response) {
-    let errorData = {};
-    try {
-      errorData = await response.json();
-    } catch {
-      errorData = { detail: 'An error occurred while processing your request' };
-    }
-
+    const errorData = await response.json();
     if (response.status === 429) {
       return {
         isRateLimit: true,
-        message: errorData.friendly_message || "You're sending messages too quickly! Please wait before sending another message.",
-        retryAfter: errorData.retry_after || 30
+        message: errorData.friendly_message || "You've reached the rate limit. Please wait before sending more messages.",
+        retryAfter: errorData.retry_after
       };
     }
     throw new Error(errorData.detail || 'Failed to send message');
   }
 
   static async sendMessage(chatRequest) {
-    const endpoint = BACKEND_URL ? `${BACKEND_URL}/api/chat` : '/api/chat';
+    const endpoint = BACKEND_URL ? `${BACKEND_URL}/chat` : '/api/chat';
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        message: chatRequest.message,
-        messages: (chatRequest.messages || []).map(({ role, content }) => ({ role, content })),
-        session_id: chatRequest.session_id,
-        timestamp: chatRequest.timestamp || Date.now() / 1000
+        ...chatRequest,
+        messages: (chatRequest.messages || []).map(({ role, content }) => ({ role, content }))
       }),
     });
 

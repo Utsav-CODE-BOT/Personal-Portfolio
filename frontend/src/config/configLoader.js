@@ -20,18 +20,18 @@ export const loadConfig = async () => {
   }
 
   isLoading = true;
-  configLoadingPromise = new Promise(async (resolve, reject) => {
-    try {
-      const response = await fetch('/config.json');    
-      const config = await response.json();
+  configLoadingPromise = fetch('/config.json')
+    .then(response => response.json())
+    .then(config => {
       configCache = config;
-      resolve(config);
-    } catch (error) {
-      reject(new Error('Failed to load configuration. The application requires a valid config.json file in the public directory.'));
-    } finally {
+      return config;
+    })
+    .catch(() => {
+      throw new Error('Failed to load configuration. The application requires a valid config.json file in the public directory.');
+    })
+    .finally(() => {
       isLoading = false;
-    }
-  });
+    });
 
   return configLoadingPromise;
 };

@@ -1,9 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { renderHook, act, waitFor } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';
 import { useStreamingChat } from './useStreamingChat';
 import { ChatService } from '../services/chatService';
-import { useMessages } from './chat/useMessages';
-import { useSession } from './chat/useSession';
 import '../test/mocks'; // Import global mocks
 
 // Create mock functions
