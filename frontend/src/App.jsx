@@ -5,10 +5,12 @@ import { AboutSection } from './components/sections/About'
 import { ProjectsSection } from './components/sections/Projects'
 import { BlogSection } from './components/sections/Blog'
 import { ConfigProvider } from './config/ConfigProvider'
+import { Preloader } from './components/common/Preloader'
 
 const App = () => {
   return (
     <ConfigProvider>
+      <Preloader />
       <BrowserRouter>
         <MainLayout>
           <Routes>

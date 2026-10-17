@@ -11,6 +11,25 @@ afterEach(() => {
   cleanup()
 })
 
+// Mock HTMLCanvasElement.prototype.getContext for jsdom
+if (typeof HTMLCanvasElement !== 'undefined') {
+  HTMLCanvasElement.prototype.getContext = function () {
+    return {
+      setTransform: vi.fn(),
+      fillRect: vi.fn(),
+      fillText: vi.fn(),
+      measureText: vi.fn(() => ({ width: 60 })),
+      getImageData: vi.fn(() => ({
+        data: new Uint8ClampedArray(400 * 400 * 4).fill(255)
+      })),
+      beginPath: vi.fn(),
+      moveTo: vi.fn(),
+      arc: vi.fn(),
+      fill: vi.fn()
+    }
+  }
+}
+
 // Mock configLoader before any imports that might use it
 vi.mock('../config/configLoader', () => {
   return {
