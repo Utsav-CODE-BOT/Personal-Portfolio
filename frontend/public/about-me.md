@@ -1,8 +1,9 @@
-Hi, I'm Alon Trugman 👋 As a software developer with a passion for startups, I thrive when turning ideas into impactful products. 
-At Wix, I improved developer experience & securtiy through Git infrastructure solutions. 
-Previously at Planck (now Applied Systems), I built scalable data processing systems that transformed insurance industry data.
-My background in Industrial Engineering and Data Science brings an analytical perspective to engineering challenges. 
-I specialize in modern tech stacks and excel at simplifying complex problems.
-Outside work, I train for triathlons, practice Vipassana meditation, and mentor developers through Kravi-Tech & Genesis. 
+Hi, I'm Utsav D 👋 An AI & Machine Learning engineer and B.Tech AI & Data Science student at Amrita Vishwa Vidyapeetham, Bengaluru.
 
-Tech enthusiast • People Person • Sports Junkie • Meditator
+I specialize in building intelligent, real-world systems across Machine Learning, Deep Learning, Robotics, Computer Vision, and Autonomous AI Agents. Whether simulating 6-DOF robotic manipulators with volumetric path planning in MATLAB, designing reinforcement learning-powered process schedulers with OpenAI Gym, or architecting multi-agent newsletter workflows with LangChain, I enjoy solving complex systems engineering problems.
+
+My core toolset includes Python, PyTorch, TensorFlow, Flask, Gradio, Stable-Baselines3, JavaScript, and Docker. I have also built production-ready generative AI platforms with rigorous ethical guardrails and semantic security firewalls to protect autonomous agents against goal-hijacking.
+
+Outside software and research, you'll find me powerlifting in the gym, exploring open-source bug bounties, mentoring peers, and tinkering with hardware and robotics.
+
+AI/ML Developer • Robotics Enthusiast • Systems Thinker • Powerlifter
