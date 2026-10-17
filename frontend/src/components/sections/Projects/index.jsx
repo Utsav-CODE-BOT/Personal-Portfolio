@@ -1,12 +1,37 @@
 import { motion } from 'framer-motion'
-import { Github } from 'lucide-react'
+import { Github, Loader2 } from 'lucide-react'
 import { useGithubRepos } from '../../../hooks/useGithubRepos'
+import { getSocialLinks } from '../../../config/configLoader'
 
 export const ProjectsSection = () => {
-  const { repos, loading, error } = useGithubRepos('alonxt', 6)
+  const social = getSocialLinks()
+  const username = social?.github?.username || 'Utsav-CODE-BOT'
+  const { repos, loading, error } = useGithubRepos(username, 6)
 
-  if (loading) return <div>Loading...</div>
-  if (error) return <div>Error loading projects</div>
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[300px] text-gray-400 gap-3">
+        <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+        <span className="text-sm">Loading projects from GitHub...</span>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[300px] text-gray-400 gap-2">
+        <p className="text-red-400 font-medium">Unable to load live projects at this moment.</p>
+        <a
+          href={social?.github?.url || `https://github.com/${username}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-purple-400 hover:text-purple-300 underline mt-2"
+        >
+          View all repositories directly on GitHub &rarr;
+        </a>
+      </div>
+    )
+  }
 
   return (
     <motion.div
@@ -46,4 +71,4 @@ export const ProjectsSection = () => {
       ))}
     </motion.div>
   )
-} 
+}
